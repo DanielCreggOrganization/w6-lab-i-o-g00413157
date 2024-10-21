@@ -1,7 +1,7 @@
 package com.example.iolab;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class Main {
@@ -9,13 +9,13 @@ public class Main {
         String inputPath = "resources/input.txt";
         String outputPath = "resources/input.txt";
 
-        try (FileInputStream fis = new FileInputStream(inputPath);
-                FileOutputStream fos = new FileOutputStream(outputPath);) {
-            int data;
-            while ((data = fis.read()) != -1) {
-                fos.write(data);
+        try (FileReader reader = new FileReader(inputPath);
+                FileWriter writer = new FileWriter(outputPath);) {
+            int character;
+            while ((character = reader.read()) != -1) {
+                writer.write(Character.toUpperCase((char) character));
             }
-            System.out.println("File Copied Successfully.");
+            System.out.println("File Copied and Converted to UpperCase.");
 
         } catch (IOException e) {
             System.out.println("Error Copying File." + e.getMessage());
