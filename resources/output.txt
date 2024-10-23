@@ -1,2 +1,5 @@
-HELLO, JAVA I/O! THIS IS A TEST FILE.
-HELLO
+Hello How Are You
+Date: 23/10/2024
+ATU Galway 2024
+Hello ATU
+This is input Text
